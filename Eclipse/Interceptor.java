@@ -7,27 +7,51 @@
  */
 public class Interceptor extends Ships
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Interceptor
-     */
-    public Interceptor()
-    {
-        // initialise instance variables
-        x = 0;
+    private int damage = 0;
+    private int power = 0;
+    private int hull = 0;
+    private int shield = 0;
+    private int PowerConsumption = 0;
+    private int[] slots;
+    private int computer = 0;
+    
+    private int getDamage (){
+        return damage;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    private boolean isDestroyed(){
+        return hull < damage;
+    }
+    private void hit(int hit){
+        damage = damage + hit;
+    }
+    private void damageReset(){
+        damage = 0;
+    }
+    private int getPower(){
+        return power;
+    }
+    private void increasePower(int increase){
+        power = power + increase;
+    }
+    private void decreasePower(int decrease){
+        power = power - decrease;
+    }
+    private int getShield(){
+        return shield;
+    }
+    private void addShield(int upgrade){
+        shield = shield + upgrade;
+    }
+    private void decreaseShield(int downgrade){
+        shield = shield - downgrade;
+    }
+    private int getComputer(){
+        return computer;
+    }
+    private void addComputer(int upgrade){
+        computer = computer + upgrade;
+    }
+    private void decreaseComputer (int downgrade){
+        computer = computer - downgrade;
     }
 }

@@ -13,7 +13,7 @@ public class Battleship extends Ships
     private int shield = 0;
     private int PowerConsumption = 0;
     private int[] slots;
-    private int comupter = 0;
+    private int computer = 0;
     
     private int getDamage (){
         return damage;
@@ -21,28 +21,37 @@ public class Battleship extends Ships
     private boolean isDestroyed(){
         return hull < damage;
     }
-    private hit(int hit){
+    private void hit(int hit){
         damage = damage + hit;
     }
-    private damageReset(){
+    private void damageReset(){
         damage = 0;
     }
     private int getPower(){
         return power;
     }
-    private increasePower(int increase){
+    private void increasePower(int increase){
         power = power + increase;
     }
-    private decreasePower(int decrease){
+    private void decreasePower(int decrease){
         power = power - decrease;
     }
     private int getShield(){
         return shield;
     }
-    private addShield(upgrade){
+    private void addShield(int upgrade){
         shield = shield + upgrade;
     }
-    private decreaseShield(downgrade){
+    private void decreaseShield(int downgrade){
         shield = shield - downgrade;
+    }
+    private int getComputer(){
+        return computer;
+    }
+    private void addComputer(int upgrade){
+        computer = computer + upgrade;
+    }
+    private void decreaseComputer (int downgrade){
+        computer = computer - downgrade;
     }
 }

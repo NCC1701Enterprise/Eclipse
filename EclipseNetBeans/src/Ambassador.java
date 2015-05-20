@@ -17,5 +17,8 @@
 public class Ambassador
 {
     private PopulationCubes[] pop = new PopulationCubes[1];
+    private void addPopulation(PopulationCubes pops){
+        pop[0]=pops;
+    }
 }
 

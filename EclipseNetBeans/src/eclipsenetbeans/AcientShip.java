@@ -1,3 +1,5 @@
+package eclipsenetbeans;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,9 +19,9 @@
 public class AcientShip extends Ships
 {
     private int damage = 0;
-    private int hull = 2;
-    private int computer = 1;
-    private int hit = 1;//two cannons though
+    private final int hull = 2;
+    private final int computer = 1;
+    private final int initiative = 2;
     
     private int getDamage (){
         return damage;
@@ -35,6 +37,9 @@ public class AcientShip extends Ships
     }
     private int getComputer(){
         return computer;
+    }
+    private int getInitiative(){
+        return initiative;
     }
 }
 

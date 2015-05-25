@@ -1,3 +1,5 @@
+package eclipsenetbeans;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,15 +12,13 @@
  */
 
 /**
- * Write a description of class SpaceHex here.
+ * Write a description of class Orbital here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SpaceHex
+public class Orbital
 {
-    private PopulationCubes[] money;
-    private PopulationCubes[] resources;
-    private PopulationCubes[] technology;
-    private InfluenceTiles[] influence = InfluenceTiles[1];
+    private PopulationCubes[] pop = new PopulationCubes[1];
+    
 }

@@ -1,3 +1,5 @@
+package eclipsenetbeans;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,6 +10,11 @@
  *
  * @author yandu5
  */
-public class Upgrades {
-    
+public class Dice
+{
+    private int dice = 1;
+    private int getRool (){
+        dice = (int)(Math.random()*6)+1;
+        return dice;
+    }
 }

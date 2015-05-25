@@ -1,3 +1,5 @@
+package eclipsenetbeans;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,20 +12,20 @@
  */
 
 /**
- * Write a description of class Battleship here.
+ * Write a description of class Interceptor here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Dreadnaught extends Ships
+public class Interceptor extends Ships
 {
     private int damage = 0;
-    private int power = 0;
     private int hull = 0;
     private int shield = 0;
-    private int PowerConsumption = 0;
+    private int reactor = 0;
     private int[] slots;
     private int computer = 0;
+    private int initiative = 0;
     
     private int getDamage (){
         return damage;
@@ -36,15 +38,6 @@ public class Dreadnaught extends Ships
     }
     private void damageReset(){
         damage = 0;
-    }
-    private int getPower(){
-        return power;
-    }
-    private void increasePower(int increase){
-        power = power + increase;
-    }
-    private void decreasePower(int decrease){
-        power = power - decrease;
     }
     private int getShield(){
         return shield;
@@ -64,5 +57,28 @@ public class Dreadnaught extends Ships
     private void decreaseComputer (int downgrade){
         computer = computer - downgrade;
     }
+    private void increaseInitiative(int increase){
+        initiative = initiative + increase;
+    }
+    private void decreaseInitiative(int decrease){
+        initiative = initiative - decrease;
+    }
+    private int getInitiative(){
+        return initiative;
+    }
+        private void increaseHull(int increase){
+        hull = hull + increase;
+    }
+    private void decreaseHull(int decrease){
+        hull = hull - decrease;
+    }
+    private int getReactor(){
+        return reactor;
+    }
+    private void increasePower(int increase){
+        reactor = reactor + increase;
+    }
+    private void decreasePower (int decrease){
+        reactor = reactor - decrease;
+    }
 }
-

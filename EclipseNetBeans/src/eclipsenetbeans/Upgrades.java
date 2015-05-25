@@ -11,5 +11,10 @@ package eclipsenetbeans;
  * @author yandu5
  */
 public class Upgrades {
-    
+    int consumption;
+    String Name;
+    public Upgrades(String name, int energy){
+        Name = name;
+        consumption = energy;
+    }
 }

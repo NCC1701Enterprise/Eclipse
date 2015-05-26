@@ -11,5 +11,5 @@ package eclipsenetbeans;
  * @author yandu5
  */
 public interface MainBoard {
-    
+
 }

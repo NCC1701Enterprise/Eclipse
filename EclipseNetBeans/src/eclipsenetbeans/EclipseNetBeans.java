@@ -16,8 +16,7 @@ public class EclipseNetBeans {
      */
     public static void main(String[] args) {
         GameBoard gameboard = new GameBoard();
-        
-        
+        EclipseGUI gui = new EclipseGUI(gameboard);
     }
     
 }

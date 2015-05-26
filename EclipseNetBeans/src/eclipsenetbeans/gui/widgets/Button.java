@@ -92,7 +92,7 @@ public class Button extends Control {
 				break;
 			}
 		} else {
-			g2.drawImage(normal, getX(), getY(), getWidth(), getHeight(), null);
+			g2.fillRect(getX(),getY(),getWidth(),getHeight());
 		}
 		Rectangle bnds = getBounds();
 		Rectangle2D strbounds = f.getStringBounds(name, g2.getFontRenderContext());

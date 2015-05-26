@@ -10,6 +10,7 @@ import eclipsenetbeans.gui.widgets.WidgetScreen;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
+import java.awt.Button;
 
 /**
  *
@@ -23,6 +24,8 @@ public class MainMenu extends WidgetScreen {
         Font f = new Font("Arial",Font.PLAIN,12);
         Rectangle loc = new Rectangle(100,100,200,50);
         Label l = new Label (loc,"Hello world!",f,Color.green);
+        Button exit = new Button (0,0,20,5,"Exit", f);
+        addWidget(exit);
         addWidget(l);
     }
 }

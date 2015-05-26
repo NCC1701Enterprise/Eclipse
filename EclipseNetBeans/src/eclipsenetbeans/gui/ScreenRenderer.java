@@ -11,7 +11,7 @@ public class ScreenRenderer {
 	private static JFrame frame = null;
 	
 	public static void render(Graphics2D g2, Rectangle bounds, double off) {
-		g2.setColor(Color.black);
+		g2.setColor(Color.gray);
 		g2.fill(bounds);
 		screen.render(g2, bounds, off);
 	}

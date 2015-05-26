@@ -5,6 +5,11 @@
  */
 package eclipsenetbeans;
 
+import eclipsenetbeans.gui.GuiMain;
+import eclipsenetbeans.screen.MainMenu;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+
 /**
  *
  * @author yandu5
@@ -16,7 +21,14 @@ public class EclipseNetBeans {
      */
     public static void main(String[] args) {
         GameBoard gameboard = new GameBoard();
-        EclipseGUI gui = new EclipseGUI(gameboard);
+        try {
+            GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            GraphicsDevice device = env.getDefaultScreenDevice();
+            new GuiMain(2, device, new MainMenu());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.exit(0);
     }
     
 }

@@ -26,29 +26,42 @@ public class SpaceHex
     private Orbital[] orbital= new Orbital[1];
     private int PriorityNumber;
     private InfluenceTiles[]influence = new InfluenceTiles[1];
-    private void addInfluenceTiles(InfluenceTiles tile){
+    private boolean Artifact;
+    private int AcientShips;
+    private final int honor;
+    public SpaceHex(int num, int m, int r, int t, boolean artifact, int AcientShip, int HonorPoints){
+        PriorityNumber = num;
+        Artifact = artifact;
+        for(int i = 0; i < AcientShip; i++){
+            AcientShip acient = new AcientShip();
+        }
+        honor = HonorPoints;
+        money  = new PopulationCubes[m];
+        resources = new PopulationCubes[r];
+        technology = new PopulationCubes[t];
+    }
+    public void addInfluenceTiles(InfluenceTiles tile){
         influence [0] = tile;
     }
-    private void removeInfluenceTiles(){
+    public void removeInfluenceTiles(){
         influence [0] = null;
     }
-    private void addNumber(int num){
+    public void addNumber(int num){
         PriorityNumber = num;
     }
-    private int getPriorityNumber(){
+    public int getPriorityNumber(){
         return PriorityNumber;
     }
-    private void buildMonolith(Monolith mon){
+    public void buildMonolith(Monolith mon){
         monolith[0] = mon;
     }
-    private void removeMonolith(){
+    public void removeMonolith(){
         monolith[0] = null;
     }
-    private void buildOrbital(Orbital orb){
+    public void buildOrbital(Orbital orb){
         orbital[0] = orb;
     }
-    private void removeOrbital(){
+    public void removeOrbital(){
         orbital[0] = null;
     }
-    
 }

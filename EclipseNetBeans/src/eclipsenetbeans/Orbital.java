@@ -20,5 +20,20 @@ package eclipsenetbeans;
 public class Orbital
 {
     private PopulationCubes[] pop = new PopulationCubes[1];
-    
+    private String color;
+    public Orbital(String player){
+        color = player;
+    }
+    public String getPlayer(){
+        return color;
+    }
+    public boolean addPopulation(PopulationCubes populate){
+        if(populate.getPlayer().equals(color)){
+            pop[0]= populate;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

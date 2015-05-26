@@ -14,22 +14,25 @@ public class GalacticCenterDefenseSystem {
     private final int hull = 7;
     private final int computer = 1;
     private final int initiative = 0;
+    public GalacticCenterDefenseSystem(){
+        this.damageReset();
+    }
     private int getDamage (){
         return damage;
     }
-    private boolean isDestroyed(){
+    public boolean isDestroyed(){
         return hull < damage;
     }
-    private void hit(int hit){
+    public void hit(int hit){
         damage = damage + hit;
     }
-    private void damageReset(){
+    public void damageReset(){
         damage = 0;
     }
-    private int getComputer(){
+    public int getComputer(){
         return computer;
     }
-    private int getInitiative(){
+    public int getInitiative(){
         return initiative;
     }
 }

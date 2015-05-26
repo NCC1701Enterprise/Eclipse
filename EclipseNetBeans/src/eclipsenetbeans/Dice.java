@@ -13,7 +13,10 @@ package eclipsenetbeans;
 public class Dice
 {
     private int dice = 1;
-    private int getRool (){
+    public Dice(){
+        this.getRool();
+    }
+    public int getRool (){
         dice = (int)(Math.random()*6)+1;
         return dice;
     }

@@ -26,59 +26,83 @@ public class Interceptor extends Ships
     private int[] slots;
     private int computer = 0;
     private int initiative = 0;
+    private int drive = 0;
+    private String color;
     
-    private int getDamage (){
+    public Interceptor (String player,int Reactor, int Hull, int Shield, int Computer, int Initiative, int Drive){
+        this.addShield(Shield);
+        this.addComputer(Computer);
+        this.increaseHull(Hull);
+        this.increaseDrive(Drive);
+        this.increasePower(Reactor);
+        this.increaseInitiative(Initiative);
+        color = player;
+    }
+    
+    public String getColor(){
+        return color;
+    }
+        public int getDamage (){
         return damage;
     }
-    private boolean isDestroyed(){
+    public boolean isDestroyed(){
         return hull < damage;
     }
-    private void hit(int hit){
+    public void hit(int hit){
         damage = damage + hit;
     }
-    private void damageReset(){
+    public void damageReset(){
         damage = 0;
     }
-    private int getShield(){
+    public int getShield(){
         return shield;
     }
-    private void addShield(int upgrade){
+    public void addShield(int upgrade){
         shield = shield + upgrade;
     }
-    private void decreaseShield(int downgrade){
+    public void decreaseShield(int downgrade){
         shield = shield - downgrade;
     }
-    private int getComputer(){
+    public int getComputer(){
         return computer;
     }
-    private void addComputer(int upgrade){
+    public void addComputer(int upgrade){
         computer = computer + upgrade;
     }
-    private void decreaseComputer (int downgrade){
+    public void decreaseComputer (int downgrade){
         computer = computer - downgrade;
     }
-    private void increaseInitiative(int increase){
+    public void increaseInitiative(int increase){
         initiative = initiative + increase;
     }
-    private void decreaseInitiative(int decrease){
+    public void decreaseInitiative(int decrease){
         initiative = initiative - decrease;
     }
-    private int getInitiative(){
+    public int getInitiative(){
         return initiative;
     }
-        private void increaseHull(int increase){
+    public void increaseHull(int increase){
         hull = hull + increase;
     }
-    private void decreaseHull(int decrease){
+    public void decreaseHull(int decrease){
         hull = hull - decrease;
     }
-    private int getReactor(){
+    public int getReactor(){
         return reactor;
     }
-    private void increasePower(int increase){
+    public void increasePower(int increase){
         reactor = reactor + increase;
     }
-    private void decreasePower (int decrease){
+    public void decreasePower (int decrease){
         reactor = reactor - decrease;
+    }
+    public int getDrive(){
+        return drive;
+    }
+    public void increaseDrive(int increase){
+        drive = drive + increase;
+    }
+    public void decreaseDrive(int decrease){
+        drive = drive - decrease;
     }
 }

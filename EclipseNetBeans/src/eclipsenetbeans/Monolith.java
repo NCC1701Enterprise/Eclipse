@@ -13,7 +13,14 @@ package eclipsenetbeans;
 public class Monolith
 {
     private int honor = 3;
-    private int getHonor(){
+    private String color;
+    public Monolith(String player){
+        color = player;
+    }
+    public String getPlayer(){
+        return color;
+    }
+    public int getHonor(){
         return honor;
     }
 }

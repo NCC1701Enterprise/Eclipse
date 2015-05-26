@@ -20,13 +20,17 @@ public class Ambassador
 {
     private final int honorsPoints = 1;
     private PopulationCubes[] pop = new PopulationCubes[1];
-    private void addPopulation(PopulationCubes pops){
+    private String color;
+    public Ambassador(String player){
+        color = player;
+    }
+    public void addPopulation(PopulationCubes pops){
         pop[0] = pops;
     }
-    private void removePopulation(){
+    public void removePopulation(){
         pop[0] = null;
     }
-    private int getHonors(){
+    public int getHonors(){
         return honorsPoints;
     }
 }

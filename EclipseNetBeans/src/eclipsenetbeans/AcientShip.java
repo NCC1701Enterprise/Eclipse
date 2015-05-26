@@ -18,27 +18,27 @@ package eclipsenetbeans;
  */
 public class AcientShip extends Ships
 {
+   
     private int damage = 0;
     private final int hull = 2;
     private final int computer = 1;
     private final int initiative = 2;
-    
-    private int getDamage (){
+    public int getDamage (){
         return damage;
     }
-    private boolean isDestroyed(){
+    public boolean isDestroyed(){
         return hull < damage;
     }
-    private void hit(int hit){
+    public void hit(int hit){
         damage = damage + hit;
     }
-    private void damageReset(){
+    public void damageReset(){
         damage = 0;
     }
-    private int getComputer(){
+    public int getComputer(){
         return computer;
     }
-    private int getInitiative(){
+    public int getInitiative(){
         return initiative;
     }
 }

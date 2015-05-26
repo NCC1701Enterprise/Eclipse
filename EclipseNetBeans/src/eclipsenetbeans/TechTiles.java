@@ -19,10 +19,10 @@ public class TechTiles {
         LowestCost = Lowest;
         HighestCost = Highest;
     }
-    private int getLowestCost(){
+    public int getLowestCost(){
         return LowestCost;
     }
-    private int getHighestCost(){
+    public int getHighestCost(){
         return HighestCost;
     }
 }

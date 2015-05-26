@@ -1,32 +1,26 @@
 package eclipsenetbeans.gui;
 
-import eclipsenetbeans.gui.ScreenRenderer;
 import java.awt.Color;
 import java.awt.DisplayMode;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.text.DecimalFormat;
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-import eclipsenetbeans.gui.widgets.WidgetScreen;
 
 public class GuiMain {
 
     public static final int TARGET_FPS = 60;
-    private static final boolean SHOW_FPS = false;
+    private static final boolean SHOW_FPS = true;
     private static final DisplayMode[] BEST_DISPLAY_MODES = new DisplayMode[]{
-        new DisplayMode(640, 480, 32, 0),
-        new DisplayMode(640, 480, 16, 0),
-        new DisplayMode(640, 480, 8, 0)
+        new DisplayMode(800, 600, 32, 0),
+        new DisplayMode(800, 600, 16, 0),
+        new DisplayMode(800, 600, 8, 0)
     };
 
     private static GuiMain instance;
@@ -68,11 +62,12 @@ public class GuiMain {
             
             running = true;
             int rate = (int) ((1f / TARGET_FPS) * 1000); //ms per frame
-            long endTime = System.currentTimeMillis();
+            long startTime = System.currentTimeMillis();
             delta = rate;
             while (running) {
-                long startTime = System.currentTimeMillis();
-                delta += startTime - endTime;
+                long ctime = System.currentTimeMillis();
+                delta = ctime - startTime;
+                startTime = ctime;
 
                 Graphics2D g2 = (Graphics2D) bufferStrategy.getDrawGraphics();
                 if (!bufferStrategy.contentsLost()) {
@@ -81,11 +76,10 @@ public class GuiMain {
                     g2.dispose();
                 }
 
-                endTime = System.currentTimeMillis();
-                delta = endTime - startTime;
-                if (rate - delta > 0) {
+                delta = System.currentTimeMillis() - startTime;
+                if (rate - delta > 1) {
                     try {
-                        Thread.sleep(rate - delta);
+                        Thread.sleep(rate - delta - 1);
                     } catch (InterruptedException e) {
                         System.out.println("[Severe] Interrupted while sleeping!");
                     }
@@ -101,11 +95,12 @@ public class GuiMain {
     private void render(Graphics2D g2, Rectangle bounds) {
         ScreenRenderer.render(g2, bounds, (delta * TARGET_FPS) / 1000.);
         if (SHOW_FPS) {
-            fps = (0.9d * fps) + (0.1d * (1d / (delta / 1000d)));
+            fps = (0.7d * fps) + (0.3d * (1000d / delta));
+            if (Double.isInfinite(fps)) fps = (1d/TARGET_FPS);
             g2.setColor(Color.black);
             g2.fillRect(0, 0, 100, 40);
             g2.setFont(new Font("Times New Roman", Font.BOLD, 12));
-            g2.setColor(Math.abs((fps / TARGET_FPS) - 1) < 0.01 ? Color.green : Color.red);
+            g2.setColor(Math.abs(fps - TARGET_FPS) < 5 ? Color.green : Color.red);
             g2.drawString("FPS: " + df.format(fps), 10, 20);
         }
     }

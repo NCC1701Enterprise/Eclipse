@@ -6,17 +6,18 @@ import java.awt.Polygon;
 import java.awt.Rectangle;
 
 
-public abstract class HexTile extends Widget {
-  private static final int RADIUS = 10; //or whatecer
+public class HexTile extends Widget {
+  private static final int RADIUS = 50; //or whatecer
   private Polygon base;
   private Polygon current;
   int[] xs = new int [6], ys = new int [6];
 
   public HexTile (int x, int y) {
-    super (x,y,2*RADIUS,2*RADIUS);
+    setSize(2*RADIUS, 2*RADIUS);
+    setLocation(x-(RADIUS/2),y-RADIUS);
     
     for (int i = 0; i < 6; i++){ 
-        int deg = 60*i+30;
+        int deg = 60*i;
         double rad = (double)(Math.PI/180*deg);
         xs [i] = (int)(RADIUS*Math.cos(rad)); 
         ys [i] = (int)(RADIUS*Math.sin(rad)); 

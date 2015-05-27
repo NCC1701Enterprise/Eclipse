@@ -82,7 +82,10 @@ public class Button extends Control {
 		if (enabled) {
 			switch (state) {
 			case 0:
-				g2.drawImage(normal, getX(), getY(), getWidth(), getHeight(), null);
+				g2.setColor(bgcolor); 
+                                g2.fillRect(getBounds()); 
+                                g2.setColor(bordercolor); 
+                                g2.drawRect(getBounds());
 				break;
 			case 1:
 				g2.drawImage(hover, getX(), getY(), getWidth(), getHeight(), null);

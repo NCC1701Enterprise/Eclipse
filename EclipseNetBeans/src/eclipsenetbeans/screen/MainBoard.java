@@ -17,9 +17,9 @@ import eclipsenetbeans.gui.widgets.HexTile;
 public class MainBoard extends WidgetScreen {
     public MainBoard () {
         super();
-        for(int x = 10; x < 800; x+= 30){
-            for(int y = 20; y < 600; y+=20){
-                HexTile hexes = new HexTile(x,y) {};
+        for(int x = 100; x < 800; x+= 300){
+            for(int y = 200; y < 600; y+=200){
+                HexTile hexes = new HexTile(x,y);
                 addWidget(hexes);
             }
         }

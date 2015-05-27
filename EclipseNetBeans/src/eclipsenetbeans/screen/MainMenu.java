@@ -5,6 +5,7 @@
  */
 package eclipsenetbeans.screen;
 
+import eclipsenetbeans.gui.widgets.HexTile;
 import eclipsenetbeans.gui.widgets.Label;
 import eclipsenetbeans.gui.widgets.WidgetScreen;
 import java.awt.Color;
@@ -24,8 +25,12 @@ public class MainMenu extends WidgetScreen {
         Font f = new Font("Arial",Font.PLAIN,12);
         Rectangle loc = new Rectangle(100,100,200,50);
         Label l = new Label (loc,"Hello world!",f,Color.green);
-        Button exit = new Button (0,0,20,5,"Exit", f);
-        addWidget(exit);
         addWidget(l);
+        for(int x = 10; x < 800; x+= 30){
+            for(int y = 20; y < 600; y+=20){
+                HexTile hexes = new HexTile(x,y) {};
+                addWidget(hexes);
+            }
+        }
     }
 }

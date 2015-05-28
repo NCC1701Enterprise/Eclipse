@@ -7,6 +7,7 @@ package eclipsenetbeans;
 
 import eclipsenetbeans.gui.GuiMain;
 import eclipsenetbeans.screen.MainMenu;
+import eclipsenetbeans.screen.MainBoard;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 
@@ -24,7 +25,7 @@ public class EclipseNetBeans {
         try {
             GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
             GraphicsDevice device = env.getDefaultScreenDevice();
-            new GuiMain(2, device, new MainMenu());
+            new GuiMain(2, device, new MainBoard());
         } catch (Exception e) {
             e.printStackTrace();
         }

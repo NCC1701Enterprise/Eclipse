@@ -27,13 +27,13 @@ public class MainMenu extends WidgetScreen {
         Label l = new Label (loc,"Hello world!",f,Color.green);
         addWidget(l);
         for(int x = 50; x < 800; x+= 150){
-            for(int y = 100; y < 600; y+=100){
+            for(int y = 100; y < 600; y+=(50*Math.sqrt(3))){
                 HexTile hexes = new HexTile(x,y);
                 addWidget(hexes);
             }
         }
         for(int x = 125; x<800; x+=150){
-            for(int y = 50; y<600; y+=100){
+            for(int y = 50; y<600; y+=(50*Math.sqrt(3))){
                 HexTile hexes = new HexTile(x,y);
                 addWidget(hexes);
             }

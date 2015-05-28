@@ -11,7 +11,7 @@ import eclipsenetbeans.gui.widgets.WidgetScreen;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
-import java.awt.Button;
+import eclipsenetbeans.gui.widgets.Button;
 
 /**
  *
@@ -38,6 +38,6 @@ public class MainMenu extends WidgetScreen {
                 addWidget(hexes);
             }
         }
-        Button derp = new Button(0, 0, 30, 10, "derp", f);
+        Button derp = new Button(400, 300, 30, 10, "derp", f);
     }
 }

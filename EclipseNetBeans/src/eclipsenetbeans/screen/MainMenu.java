@@ -38,5 +38,6 @@ public class MainMenu extends WidgetScreen {
                 addWidget(hexes);
             }
         }
+        Button derp = new Button(0, 0, 30, 10, "derp", f);
     }
 }

@@ -12,24 +12,23 @@ import javax.swing.ImageIcon;
 
 
 public class Button extends Control {
-	private static final BufferedImage normal, hover, press;
 	private static final Color color = new Color(77,0,0);
 	private static final Color disabled = new Color(50,50,50,150);
-	static {
-		BufferedImage t1 = null, t2 = null, t3 = null;
-		try {
-			t1 = ImageIO.read(Button.class.getResource("Button.png"));
-			t2 = ImageIO.read(Button.class.getResource("ButtonHover.png"));
-			t3 = ImageIO.read(Button.class.getResource("ButtonPress.png"));
-		} catch (Exception e) {
-			System.err.println("Error loading button images.");
-			e.printStackTrace();
-			System.exit(1);
-		}
-		normal = t1;
-		hover = t2;
-		press = t3;
-	}
+//	static {
+//		BufferedImage t1 = null, t2 = null, t3 = null;
+//		try {
+//			t1 = ImageIO.read(Button.class.getResource("Button.png"));
+//			t2 = ImageIO.read(Button.class.getResource("ButtonHover.png"));
+//			t3 = ImageIO.read(Button.class.getResource("ButtonPress.png"));
+//		} catch (Exception e) {
+//			System.err.println("Error loading button images.");
+//			e.printStackTrace();
+//			System.exit(1);
+//		}
+//		normal = t1;
+//		hover = t2;
+//		press = t3;
+//	}
 	
 	private int state = 0;
 	private boolean enabled = true;
@@ -88,13 +87,19 @@ public class Button extends Control {
                                 g2.fillRect(bounds.x,bounds.y,bounds.width,bounds.height); 
                                 g2.setColor(bordercolor); 
                                 g2.drawRect(bounds.x,bounds.y,bounds.width,bounds.height);
-				break;
+                                break;
 			case 1:
-				g2.drawImage(hover, getX(), getY(), getWidth(), getHeight(), null);
-				break;
+				g2.setColor(color); 
+                                g2.fillRect(bounds.x,bounds.y,bounds.width,bounds.height); 
+                                g2.setColor(bordercolor); 
+                                g2.drawRect(bounds.x,bounds.y,bounds.width,bounds.height);
+                                break;
 			case 2:
-				g2.drawImage(press, getX(), getY(), getWidth(), getHeight(), null);
-				break;
+				g2.setColor(color); 
+                                g2.fillRect(bounds.x,bounds.y,bounds.width,bounds.height); 
+                                g2.setColor(bordercolor); 
+                                g2.drawRect(bounds.x,bounds.y,bounds.width,bounds.height);
+                                break;
 			}
 		} else {
 			g2.fillRect(getX(),getY(),getWidth(),getHeight());

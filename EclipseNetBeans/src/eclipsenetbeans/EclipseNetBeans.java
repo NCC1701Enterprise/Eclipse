@@ -25,7 +25,7 @@ public class EclipseNetBeans {
         try {
             GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
             GraphicsDevice device = env.getDefaultScreenDevice();
-            new GuiMain(2, device, new MainBoard());
+            new GuiMain(2, device, new MainMenu());
         } catch (Exception e) {
             e.printStackTrace();
         }
